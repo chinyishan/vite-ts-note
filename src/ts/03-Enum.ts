@@ -102,3 +102,5 @@ function handleError(code: number = 0) {
 console.log(handleError(404));
 console.log(StatusErrorCodes["Forbidden"]); //  ->  403
 console.log(StatusErrorCodes[403]); //  ->  Forbidden
+
+export { getTodaySpecial };

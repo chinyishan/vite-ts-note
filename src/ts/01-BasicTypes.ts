@@ -1,9 +1,12 @@
 // typescript 變數宣告型別定義 number string boolean array object
 const num: number = 1;
+
 const str: string = "sunny";
+
 const bool: boolean = true;
-const arr1: Array<number> = [1, 2, 3];
-const arr2: number[] = [1, 2, 3];
+
+const arr1: Array<number> = [1, 2, 3]; //陣列泛型 Array<elemType>
+const arr2: number[] = [1, 2, 3]; //「型別 + 方括號」表示法
 const arr3: Array<string> = ["a", "b", "c"];
 const arr4: string[] = ["a", "b", "c"];
 const arr5: Array<boolean> = [true, false, true];

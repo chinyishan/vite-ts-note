@@ -1,8 +1,6 @@
-
 const mike = { firstName: "Cheng", lastName: "Mike" };
 
 // -----------------------------
-
 
 const jobInfo = {
   job: "Frontend Engineer",
@@ -14,7 +12,6 @@ const jobInfo = {
 };
 
 // -----------------------------
-
 
 const taipei: ICity = {
   name: "新北市",
@@ -62,3 +59,5 @@ const box = {
   "font-size": "16px",
   "font-weight": "bold",
 };
+
+// -----------------------------------
