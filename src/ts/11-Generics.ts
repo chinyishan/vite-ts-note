@@ -1,4 +1,8 @@
-function resArg(arg) {
+/** 泛型 ( Generics )
+ * 使用時機，不確定 type 是甚麼時，或可接受任意型別丟進函式就可以使用
+ * 調用函式需補上 <type>
+ */
+function resArg<T>(arg: T): T {
   return arg;
 }
 
@@ -6,22 +10,23 @@ function resArg(arg) {
 //   return arg;
 // };
 
-const res1 = resArg("Mike");
-const res2 = resArg(100);
+const res1 = resArg<string>("Sunny");
+const res2 = resArg<number>(100);
 
-console.log(res1); // -> "Mike"
+console.log(res1); // -> "Sunny"
 console.log(res2); // -> 100
 
 //---------------------------------------------
 
-function getFirstItem(arr) {
+// string[]、number[]
+function getFirstItem<T>(arr: T[]): T {
   return arr[0];
 }
 
 const numbers = [1, 2, 3, 4];
-const firstNumber = getFirstItem(numbers);
+const firstNumber = getFirstItem<number>(numbers);
 console.log(firstNumber); // => 1
 
 const strings = ["a", "b", "c", "d"];
-const firstString = getFirstItem(strings);
+const firstString = getFirstItem<string>(strings);
 console.log(firstString); // => "a"

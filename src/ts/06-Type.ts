@@ -15,7 +15,7 @@ type TUserInfo = {
 
 const user: TUserInfo = { 
   id: 1,
-  name: "mike",
+  name: "Sunny",
   age: 12 
 };
 
@@ -29,7 +29,7 @@ type TJobInfo = {
 const job = {
   baseInfo: {
     id: 1,
-    name: "mike",
+    name: "Sunny",
     age: 12,
   },
   job: "Frontend Engineer",
@@ -52,7 +52,7 @@ type TB ={
 type TPerson = TA & TB
 
 const person: TPerson = {
-  name: "mike",
+  name: "Sunny",
   age: 12,
   sex: "boy",
   address: "Taiwan",
