@@ -6,8 +6,8 @@
  */
 
 interface ISunny {
-  firstName: string, 
-  lastName: string
+  firstName: string;
+  lastName: string;
 }
 
 const Sunny: ISunny = { firstName: "Cheng", lastName: "Sunny" };
@@ -15,13 +15,13 @@ const Sunny: ISunny = { firstName: "Cheng", lastName: "Sunny" };
 // -----------------------------
 
 interface IBase {
-  name: string,
-  age: number,
-  address: string,
+  name: string;
+  age: number;
+  address: string;
 }
 interface IJobInfo {
-  job: string,
-  baseInfo: IBase,
+  job: string;
+  baseInfo: IBase;
 }
 
 const jobInfo: IJobInfo = {
@@ -36,13 +36,13 @@ const jobInfo: IJobInfo = {
 // -----------------------------
 
 interface IZip {
-  name: string,
-  zip: string
+  name: string;
+  zip: string;
 }
 
 interface ICity {
-  name: string,
-  area: IZip[] //Array<IZip>
+  name: string;
+  area: IZip[]; //Array<IZip>
 }
 
 const taipei: ICity = {
@@ -75,7 +75,7 @@ interface IBoxFontSize {
   "font-weight": string;
 }
 
-interface IBoxStyle extends IWidth, IHeight, IBoxFontSize{
+interface IBoxStyle extends IWidth, IHeight, IBoxFontSize {
   color: string;
   border: string;
   padding: string;
@@ -97,13 +97,13 @@ const box: IBoxStyle = {
 
 /**會自動合併相同名稱的 interface */
 interface IData {
-  name: string
+  name: string;
 }
 interface IData {
-  age: number
+  age: number;
 }
 
 const data: IData = {
   name: "sunny",
   age: 10,
-}
+};

@@ -1,14 +1,23 @@
+// DOM 引入
 // import { titleRef, inpTxtRef, sendRef } from "./04-DOM.js";
-// import { getLength } from "./10-TypeFunction";
-import { createArray } from "./11-Generics";
-// import "./09-TypeAssertion.ts";
-// import "./10-TypeFunction.ts";
-// import "./11-Generics.ts";
-// import "./12-Asynchronous.ts";
-// import "./16-Module-Import-type.ts";
-
 // console.log(titleRef, inpTxtRef, sendRef);
 
+// Function 引入
+// import { getLength } from "./10-TypeFunction";
 // console.log(getLength("hello"));
-console.log(createArray(3, "x"));
 
+// JS 檔案 引入，避免報錯需在 tsconfig.json 中設定 "allowJs": true & "checkJs": false
+import { getRandomInt } from "../lib/randomFn";
+const randomInt = getRandomInt(1, 100);
+console.log(randomInt);
+
+// 全域引入，在 tsconfig.json 中設定 "include": ["src/**/*.ts"]
+const userGlobal: TUserBaseType = {
+  name: "Sunny",
+  age: 18,
+  userAddress: "Taipei",
+};
+console.log(userGlobal);
+
+// window 與 document 直接使用，需在 tsconfig.json 中設定 "lib": ["ES2020", "DOM", "DOM.Iterable"]
+// window.document;

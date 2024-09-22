@@ -24,7 +24,10 @@ const arr10: Array<{ id: number; name: string }> = [
   { id: 1, name: "sunny" },
   { id: 2, name: "jane" },
 ];
-const arr11: Array<{ id: number; name?: string }> = [{ id: 1, name: "sunny" }, { id: 2 }];
+const arr11: Array<{ id: number; name?: string }> = [
+  { id: 1, name: "sunny" },
+  { id: 2 },
+];
 
 const arr12: Array<{ id: number; name: string | null | undefined }> = [
   { id: 1, name: "sunny" },
@@ -34,9 +37,24 @@ const arr12: Array<{ id: number; name: string | null | undefined }> = [
 
 const obj1: { id: number; name: string } = { id: 1, name: "sunny" };
 const obj2: { id: number; name?: string } = { id: 1 };
-const obj3: { id: number; name: string | null | undefined } = { id: 1, name: undefined };
-const obj4: { id: number; name: string | null | undefined } = { id: 1, name: null };
+const obj3: { id: number; name: string | null | undefined } = {
+  id: 1,
+  name: undefined,
+};
+const obj4: { id: number; name: string | null | undefined } = {
+  id: 1,
+  name: null,
+};
 const obj5: { id: number; name?: string | null | undefined } = { id: 1 };
-const obj9: { id: number; name: string | null | undefined } = { id: 1, name: "sunny" };
-const obj6: { id: number; name: string | null | undefined } = { id: 1, name: undefined };
-const obj7: { id: number; name: string | null | undefined } = { id: 1, name: null };
+const obj9: { id: number; name: string | null | undefined } = {
+  id: 1,
+  name: "sunny",
+};
+const obj6: { id: number; name: string | null | undefined } = {
+  id: 1,
+  name: undefined,
+};
+const obj7: { id: number; name: string | null | undefined } = {
+  id: 1,
+  name: null,
+};
