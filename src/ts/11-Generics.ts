@@ -16,7 +16,7 @@ function resArg<T>(arg: T): T {
 //   return arg;
 // };
 
-const res1 = resArg<string>("Sunny");
+const res1 = resArg<string>('Sunny');
 const res2 = resArg<number>(100);
 
 console.log(res1); // -> "Sunny"
@@ -35,7 +35,7 @@ const numbers = [1, 2, 3, 4];
 const firstNumber = getFirstItem<number>(numbers);
 console.log(firstNumber); // => 1
 
-const strings = ["a", "b", "c", "d"];
+const strings = ['a', 'b', 'c', 'd'];
 const firstString = getFirstItem<string>(strings);
 console.log(firstString); // => "a"
 

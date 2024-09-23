@@ -7,5 +7,9 @@
  */
 
 const tuple1: [number, string] = [1, "a"];
-const tuple2: [string, number] = ["a", 1]; // error -> 不可以改變類型順序
-const tuple3: [number, string, number] = [1, "a", 2]; // error -> 不可以多加類型
+const tuple2: [string, number] = ['a', 1]; // error -> 不可以改變類型順序
+const tuple3: [number, string, number] = [1, 'a', 2]; // error -> 不可以多加類型
+
+tuple1.push("admin");
+
+export { tuple1, tuple2, tuple3 };

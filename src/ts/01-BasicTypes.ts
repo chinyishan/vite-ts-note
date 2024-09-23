@@ -29,6 +29,7 @@ const arr11: Array<{ id: number; name?: string }> = [
   { id: 2 },
 ];
 
+// 聯合型別（Union Types），允許變數可以是多個型別之一。使用 | 符號將可能的型別隔開
 const arr12: Array<{ id: number; name: string | null | undefined }> = [
   { id: 1, name: "sunny" },
   { id: 2, name: null },
