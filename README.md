@@ -1,6 +1,6 @@
 # 撰寫 TS 的觀念
 
-## 型別推斷：
+## 型別推斷
 
 - TS 會根據變數的初始值來推斷其型別，可只針對重要在定義。例如：
 
@@ -128,6 +128,30 @@ value = true;
 const arr: any[] = [1, 'a', true]; //陣列內任意型別
 ```
 
+## type（類型）
+
+- type 可以定義基本型別、聯合型別、交叉型別，interface 只能定義物件型別。
+
+```tsx
+type TA = {
+  name: string;
+  age: number;
+};
+type TB = {
+  sex: string;
+  address: string;
+};
+
+type TPerson = TA & TB;
+
+const person: TPerson = {
+  name: 'Sunny',
+  age: 12,
+  sex: 'boy',
+  address: 'Taiwan',
+};
+```
+
 ## 介面（Interfaces）
 
 - 用於定義物件的結構，確保物件符合特定的結構。
@@ -138,33 +162,15 @@ interface Person {
   age: number;
 }
 const person: Person = {
-  name: 'John',
+  name: 'Sunny',
   age: 30,
-};
-```
-
-## type 型別定義
-
-- type 可以定義基本型別、聯合型別、交叉型別，interface 只能定義物件型別。
-
-```tsx
-type Name = string;
-type Age = number;
-type Person = {
-  name: Name;
-  age: Age;
 };
 ```
 
 ## type 與 interface 的差異
 
-- type 可以定義基本型別、聯合型別、交叉型別，interface 只能定義物件型別。
-- type 可以定義函數型別，interface 不能。
-- type 可以定義陣列型別，interface 不能。
-- type 可以定義字面量型別，interface 不能。
-- type 可以定義泛型型別，interface 不能。
-- type 可以定義映射型別，interface 不能。
-- type 可以定義索引型別，interface 不能。
+- interface：更適合定義物件的結構，可以多次聲明並自動合併，支援繼承。
+- type：更靈活，可以定義聯合類型、交叉類型、元組等，不能多次宣告同一個類型。
 
 ## 類別（Classes）：
 
@@ -234,10 +240,10 @@ npm install @types/node --save-dev
 
 ## 什麼是 .d.ts ?
 
-.d.ts 文件是 TypeScript 和 JavaScript 之间的桥梁，让 TypeScript 能够理解和检查 JavaScript 代码的类型信息。
+.d.ts 檔案是 TypeScript 和 JavaScript 之間的橋樑，讓 TypeScript 能夠理解和檢查 JavaScript 程式碼的型別資訊。
 
-- 描述 JavaScript 库的类型信息：为现有的 JavaScript 库提供类型定义，使 TypeScript 能够理解这些库的结构和用法。
-- 提供类型安全：让 TypeScript 编译器能够检查代码是否正确使用了外部库的 API。
-- 支持模块化：帮助在 TypeScript 中使用模块化的 JavaScript 库，定义模块的导入和导出。
-- 不修改原代码：允许为外部库提供类型定义，而无需修改库的原始代码。
-- 增强开发体验：提供代码补全、类型检查等功能，提高开发效率。
+- 描述 JavaScript 函式庫的類型資訊：為現有的 JavaScript 函式庫提供型別定義，使 TypeScript 能夠理解這些函式庫的結構和用法。
+- 提供型別安全：讓 TypeScript 編譯器能夠檢查程式碼是否正確使用了外部函式庫的 API。
+- 支援模組化：幫助在 TypeScript 中使用模組化的 JavaScript 程式庫，定義模組的導入和導出。
+- 不修改原始程式碼：允許為外部程式庫提供類型定義，而無需修改庫的原始程式碼。
+- 增強開發體驗：提供程式碼補全、型別檢查等功能，提升開發效率。

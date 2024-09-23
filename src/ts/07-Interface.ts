@@ -60,7 +60,8 @@ const taipei: ICity = {
 };
 
 // -----------------------------
-/**透過 extends 把其他 Interface 繼承到某個 Interface */
+// 繼承（extends）
+//透過 繼承(extends) 把其他 Interface 繼承到某個 Interface
 
 interface IWidth {
   width: string;
@@ -107,3 +108,42 @@ const data: IData = {
   name: "sunny",
   age: 10,
 };
+
+// -----------------------------------
+// 唯讀屬性（readonly）
+interface PersonInterface1 {
+  readonly userId: number;
+  name: string;
+  age: number;
+}
+
+const personInterface1: PersonInterface1 = {
+  userId: 123,
+  name: 'sunny',
+  age: 30,
+};
+
+// personInterface1.userId = 456; // TypeScript 報錯，userId 為唯讀屬性
+
+// -----------------------------------
+// 索引屬性
+// 其中可以包含不固定名稱的屬性，並指定它的型別。
+interface IStringArray {
+  [index: number]: string;
+}
+
+const myArray: IStringArray = ["apple", "banana", "cherry"];
+
+interface ErrorContainer1 {
+  id: number;
+  [key: string]: any;
+}
+
+const errorBag1: ErrorContainer1 = {
+  id: 123,
+  email: '無效的信箱格式',
+  isActive: true,
+};
+
+// -----------------------------------
+
