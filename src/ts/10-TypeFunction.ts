@@ -30,6 +30,12 @@ type IHandleNumber = {
   (a: number, b: number): number
 };
 
+/* 
+interface IHandleNumber = {
+  (a: number, b: number): number
+} 
+*/
+
 const add: IHandleNumber = (a, b) => a + b;
 const reduce: IHandleNumber = (a, b) => a - b;
 
@@ -42,6 +48,22 @@ function reverse(x: number | string): number | string {
   return typeof x === "number" ? Number(x.toString().split("").reverse().join("")) : x.split("").reverse().join("");
 }
 reverse("hello");
+
+// -------------------------------------------
+
+/**返回型別指定為 undefined 時，
+ * 需在函式中包含明確的 return 語句。
+ */
+function addNum2(n1: number, n2: number): number {
+  return n1 + n2; // 回傳需指派給類型 'number' ，不可為其他型別否則報錯
+}
+
+function printResult(num: number): undefined { // TypeScript 報錯
+  console.log(`結果:${num}`); // 結果:17
+  return; // 加上 return 解決 TypeScript 錯誤
+}
+
+printResult(addNum2(5, 12));
 
 // -------------------------------------------
 
