@@ -22,21 +22,21 @@ enum DaysWeek {
 function getTodaySpecial(day: DaysWeek) {
   switch (day) {
     case DaysWeek.Monday:
-      return "星期一大特價: 買一送一!";
+      return '星期一大特價: 買一送一!';
     case DaysWeek.Tuesday:
-      return "星期二大特價: 三人同行一人免費!";
+      return '星期二大特價: 三人同行一人免費!';
     case DaysWeek.Wednesday:
-      return "星期三大特價: 五折優惠!";
+      return '星期三大特價: 五折優惠!';
     case DaysWeek.Thursday:
-      return "星期四大特價: 三人同行一人免費!";
+      return '星期四大特價: 三人同行一人免費!';
     case DaysWeek.Friday:
-      return "星期五大特價: 五折優惠!";
+      return '星期五大特價: 五折優惠!';
     case DaysWeek.Saturday:
-      return "星期六大特價: 買一送一!";
+      return '星期六大特價: 買一送一!';
     case DaysWeek.Sunday:
-      return "星期日大特價: 三人同行一人免費!";
+      return '星期日大特價: 三人同行一人免費!';
     default:
-      return "今天沒有特價活動!";
+      return '今天沒有特價活動!';
   }
 }
 
@@ -58,11 +58,11 @@ enum UserLoginStatus {
 
 function getLOLUserStatus(status: UserLoginStatus) {
   if (status === UserLoginStatus.Online) {
-    return "上線";
+    return '上線';
   } else if (status === UserLoginStatus.Offline) {
-    return "離線";
+    return '離線';
   } else if (status === UserLoginStatus.leave) {
-    return "不在位子上";
+    return '不在位子上';
   }
 }
 
@@ -85,22 +85,51 @@ enum StatusErrorCodes {
 function handleError(code: number = 0) {
   switch (code) {
     case StatusErrorCodes.NotFound:
-      console.log("ERROR: 沒有這個東西");
-      return "ERROR: 沒有這個東西";
+      console.log('ERROR: 沒有這個東西');
+      return 'ERROR: 沒有這個東西';
     case StatusErrorCodes.Forbidden:
-      console.log("ERROR: 禁止存取");
-      return "ERROR: 禁止存取";
+      console.log('ERROR: 禁止存取');
+      return 'ERROR: 禁止存取';
     case StatusErrorCodes.Unauthorized:
-      console.log("ERROR: 未經授權");
-      return "ERROR: 未經授權";
+      console.log('ERROR: 未經授權');
+      return 'ERROR: 未經授權';
     default:
-      console.log("ERROR: 未知的錯誤");
-      return "ERROR: 未知的錯誤";
+      console.log('ERROR: 未知的錯誤');
+      return 'ERROR: 未知的錯誤';
   }
 }
 
 console.log(handleError(404));
-console.log(StatusErrorCodes["Forbidden"]); //  ->  403
+console.log(StatusErrorCodes['Forbidden']); //  ->  403
 console.log(StatusErrorCodes[403]); //  ->  Forbidden
 
 export { getTodaySpecial };
+
+// ------------------------------------------
+
+// 其他專案應用 product-detail-platform-frontend
+/**
+ * 响应码枚举
+ */
+export const enum ResultEnum {
+  /**
+   * 成功
+   */
+  SUCCESS = '200',
+  /**
+   * 错误
+   */
+  ERROR = 'B0001',
+
+  /**
+   * 令牌无效或过期
+   */
+  TOKEN_INVALID = 'A0230',
+}
+
+// -----------------------------------------
+
+/**
+ * 令牌缓存Key
+ */
+export const TOKEN_KEY = 'accessToken';

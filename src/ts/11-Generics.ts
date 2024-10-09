@@ -61,8 +61,29 @@ function swap<T, U>(tuple: [T, U]): [U, T] {
   return [tuple[1], tuple[0]];
 }
 
-const res4 = swap([7, "seven"]); // ['seven', 7]
+const res4 = swap([7, 'seven']); // ['seven', 7]
 console.log(res4);
+
+//---------------------------------------------
+
+// 其他專案應用 product-detail-platform-frontend
+
+/**hook應用 event handler */
+
+// import EventEmitter from "eventemitter3";
+
+// type EventHandler = {
+//   [event: string]: (...args: any[]) => void;
+// };
+// export default function useHandler() {
+//   const EventBus = new EventEmitter<EventHandler>();
+//   return {
+//     emitHandler: function (method: string, ...args: any[]) {
+//       EventBus.emit(method, ...args);
+//     },
+//     eventHandler: EventBus,
+//   };
+// }
 
 //---------------------------------------------
 
