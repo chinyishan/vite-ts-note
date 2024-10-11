@@ -6,84 +6,83 @@
  */
 
 // 基本型別
-type MyType = number | string
+type MyType = number | string;
 
 // ------------------------------------------------------------
 // 物件型別
 type TUserInfo = {
-  id: number,
-  name: string,
-  age: number 
-}
+  id: number;
+  name: string;
+  age: number;
+};
 
-const user: TUserInfo = { 
+const user: TUserInfo = {
   id: 1,
-  name: "Sunny",
-  age: 12 
+  name: 'Sunny',
+  age: 12,
 };
 
 // 讓 type 做重複使用
 type TJobInfo = {
-  baseInfo: TUserInfo,
-  job: string
-}
+  baseInfo: TUserInfo;
+  job: string;
+};
 
 const job: TJobInfo = {
   baseInfo: {
     id: 1,
-    name: "Sunny",
+    name: 'Sunny',
     age: 12,
   },
-  job: "Frontend Engineer",
+  job: 'Frontend Engineer',
 };
 
-
 // ------------------------------------------------------------
-// 用 & 做交叉類型，新類型必須包含所有合併類型的所有屬性。
+// 用 & 做交叉類型(交集型別)，新類型必須包含所有合併類型的所有屬性。
 
 type TA = {
-  name: string,
-  age: number,
-}
+  name: string;
+  age: number;
+};
 
-type TB ={
-  sex: string,
-  address: string,
-}
+type TB = {
+  sex: string;
+  address: string;
+};
 
-type TPerson = TA & TB
+type TPerson = TA & TB;
 
 const person: TPerson = {
-  name: "Sunny",
+  name: 'Sunny',
   age: 12,
-  sex: "boy",
-  address: "Taiwan",
+  sex: 'boy',
+  address: 'Taiwan',
 };
 
 // ------------------------------------------------------------
 // 用 | 做聯合類型，新類型可以是任意一個聯合類型中的類型。
 
 type TC = {
-  name: string,
-  age: number,
-}
+  name: string;
+  age: number;
+};
 
 type TD = {
-  sex: string,
-  address: string,
-}
+  sex: string;
+  address: string;
+};
 
-type TPerson2 = TC | TD
+type TPerson2 = TC | TD;
 
 const person2: TPerson2 = {
-  name: "Sunny",
+  name: 'Sunny',
   age: 12,
-}
+};
 
 const person3: TPerson2 = {
-  sex: "boy",
-  address: "Taiwan",
-}
+  sex: 'boy',
+  address: 'Taiwan',
+};
 
 // ------------------------------------------------------------
 // 函式型別，可以指定參數和回傳值的型別
@@ -95,7 +94,7 @@ type TPerson4 = {
 const person4: TPerson4 = {
   name: 'Sunny',
   age: 30,
-}
+};
 const greet = (person: TPerson4) => {
   console.log(`我是${person.name}`); // 我是Sunny
 };
@@ -119,4 +118,3 @@ console.log(numValue); // 30
 
 const stringValue: string = stringContainer.value;
 console.log(stringValue); // 我是sunny
-

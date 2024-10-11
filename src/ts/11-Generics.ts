@@ -16,8 +16,8 @@ function resArg<T>(arg: T): T {
 //   return arg;
 // };
 
-const res1 = resArg<string>('Sunny');
-const res2 = resArg<number>(100);
+const res1 = resArg<string>('Sunny'); // <告知型別>為 string ，(參數)須為 string，返回 string
+const res2 = resArg<number>(100); // <告知型別>為 number ，(參數)須為 number，返回 number
 
 console.log(res1); // -> "Sunny"
 console.log(res2); // -> 100

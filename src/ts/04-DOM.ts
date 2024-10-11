@@ -11,3 +11,14 @@ export const sendRef: HTMLButtonElement | null =
 
 const input = document.querySelector('input')! as HTMLInputElement;
 console.log(input.value);
+
+// ----------------------------------------------------------
+
+// 型別斷言
+// 尖括號 <>（angle-bracket）語法
+export const myInpTxt = <HTMLInputElement>document.getElementById('inpTxt')!;
+myInpTxt.value = 'sunny'; // TypeScript 報錯
+// 錯誤一： 'myInpTxt' 可能是 'null'
+// 錯誤二： 類型 'HTMLElement' 沒有屬性 'value'
+
+export const myInpTxt2 = document.getElementById('inpTxt')! as HTMLInputElement;

@@ -1,6 +1,6 @@
 // DOM 引入
-// import { titleRef, inpTxtRef, sendRef } from "./04-DOM";
-// console.log(titleRef, inpTxtRef, sendRef);
+import { titleRef, inpTxtRef, sendRef, myInpTxt } from './04-DOM';
+console.log(titleRef, inpTxtRef, sendRef, myInpTxt);
 
 // Function 引入
 // import { getLength } from "./10-TypeFunction";

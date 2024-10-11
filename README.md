@@ -179,7 +179,7 @@ const person: Person = {
 - 仍然可以在函式中使用 return 語句，但不能指定返回值。
 - 明確指定返回值，若涵式的宣告類型既不是 'void' 也不是 'any'，則必須傳回值。
 
-## 類別（Classes）：
+## 類別（Class）：
 
 - 用於定義物件的藍圖，包含屬性和方法。
 
@@ -203,6 +203,15 @@ function identity<T>(arg: T): T {
 }
 ```
 
+- 多個型別引數
+
+```tsx
+function pair<T, U>(first: T, second: U): [U, T] {
+  return [second, first];
+}
+const result = pair(42, 'Hello'); // ['Hello', 42]
+```
+
 ## tsconfig 中的 window 與 document
 
 - 讓 ts 檔案中可以使用 window 與 document，"lib" 可擴充 TS 檢查尋別的內容
@@ -223,21 +232,22 @@ function identity<T>(arg: T): T {
 
 ## 打包設定語法的轉換 vite build.target 與 @types/node
 
-<a href="https://esbuild.github.io/content-types/">esbuild content-types</a>
-
+- 連結:　<a href="https://esbuild.github.io/content-types/">esbuild content-types 內容類型</a>
 - 讓 vite 可以支援 ts 語法
 - 使用 esnext 保持使用最新的 JS 語法和特性。適合使用者將會在支持最新 ECMAScript 版本的環境中運行。
 - 使用 esnext，Vite 不會轉譯任何最新的 JS 語法，因此代碼保留原始語法。
 - 保留現代 JS 語法可能對性能有正面影響，因為現代瀏覽器對最新的 ECMAScript 特性通常有更好的優化。
 - 如果需要支持較舊的瀏覽器或環境，則可能需要選擇一個更低版本的 ECMAScript 目標，或是一些修復的補丁。
 
-```
+```jsx
 build: {
   target: 'esnext',
 }
 ```
 
-TS 不知道 node 的型別，需要另外安裝 @types/node
+### 未安裝 @types/node 時，`vite.config.ts` 會報錯
+
+- TS 不知道 node 的型別，需要另外安裝 @types/node
 
 ```
 npm install @types/node --save-dev
@@ -247,10 +257,10 @@ npm install @types/node --save-dev
 
 ## 什麼是 .d.ts ?
 
-.d.ts 檔案是 TypeScript 和 JavaScript 之間的橋樑，讓 TypeScript 能夠理解和檢查 JavaScript 程式碼的型別資訊。
+是 TS 和 JS 之間的橋樑，讓 TS 能夠理解和檢查 JS 程式碼的型別資訊。
 
-- 描述 JavaScript 函式庫的類型資訊：為現有的 JavaScript 函式庫提供型別定義，使 TypeScript 能夠理解這些函式庫的結構和用法。
-- 提供型別安全：讓 TypeScript 編譯器能夠檢查程式碼是否正確使用了外部函式庫的 API。
-- 支援模組化：幫助在 TypeScript 中使用模組化的 JavaScript 程式庫，定義模組的導入和導出。
+- 描述 JS 函式庫的類型資訊：為現有的 JS 函式庫提供型別定義，使 TS 能夠理解這些函式庫的結構和用法。
+- 提供型別安全：讓 TS 編譯器能夠檢查程式碼是否正確使用了外部函式庫的 API。
+- 支援模組化：幫助在 TS 中使用模組化的 JS 程式庫，定義模組的導入和導出。
 - 不修改原始程式碼：允許為外部程式庫提供類型定義，而無需修改庫的原始程式碼。
 - 增強開發體驗：提供程式碼補全、型別檢查等功能，提升開發效率。
